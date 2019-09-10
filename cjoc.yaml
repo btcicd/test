@@ -116,23 +116,23 @@ jenkins:
   - performanceAnalytics:
       name: "Performance Analytics"
   viewsTabBar: "standard"
-security:
-  apiToken:
-    creationOfLegacyTokenEnabled: false
-    tokenGenerationOnCreationEnabled: false
-    usageStatisticsEnabled: true
-  downloadSettings:
-    useBrowser: false
-  globalConfigurationImpl:
-    global:
-      realmOnly:
-        canCustomMapping: false
-        canOverride: false
-        defaultMappingFactory: "restrictedEquivalentRAMF"
-  remotingCLI:
-    enabled: false
-  sSHD:
-    port: -1
+#security:
+#  apiToken:
+#    creationOfLegacyTokenEnabled: false
+#    tokenGenerationOnCreationEnabled: false
+#    usageStatisticsEnabled: true
+#  downloadSettings:
+#    useBrowser: false
+#  globalConfigurationImpl:
+#    global:
+#      realmOnly:
+#        canCustomMapping: false
+#        canOverride: false
+#        defaultMappingFactory: "restrictedEquivalentRAMF"
+#  remotingCLI:
+#    enabled: false
+#  sSHD:
+#    port: -1
 unclassified:
   contentFilters:
     enabled: false
