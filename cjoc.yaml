@@ -1,0 +1,209 @@
+jenkins:
+  agentProtocols:
+  - "Diagnostic-Ping"
+  - "JNLP4-connect"
+  - "OperationsCenter2"
+  - "Ping"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: true
+  disableRememberMe: false
+  markupFormatter:
+    rawHtml:
+      disableSyntaxHighlighting: false
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  numExecutors: 2
+  primaryView:
+    masters:
+      columns:
+      - "status"
+      - "weather"
+      - "jobName"
+      - "manageMaster"
+      - "listSelectionColumn"
+      - "totalJobsViewColumn"
+      - "queueSizeViewColumn"
+      - "jenkinsVersionViewColumn"
+      - "masterConfigurationStaleViewColumn"
+      jobFilters:
+      - jobTypeFilter:
+          includeExcludeTypeString: "includeMatched"
+          jobType: "com.cloudbees.opscenter.server.model.ClientMaster$DescriptorImpl@d067ccd"
+      - jobTypeFilter:
+          includeExcludeTypeString: "includeMatched"
+          jobType: "com.cloudbees.opscenter.server.model.ManagedMaster$DescriptorImpl@38656161"
+      name: "Masters"
+      recurse: true
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: false
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    saml:
+      binding: "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
+      displayNameAttributeName: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+      groupsAttributeName: "groups"
+      idpMetadataConfiguration:
+        period: 0
+        url: "https://aloha.my.salesforce.com/.well-known/samlidp.xml"
+        xml: |-
+          <md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="https://aloha.my.salesforce.com" validUntil="2029-07-23T17:56:13.030Z">
+          <md:IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+          <md:KeyDescriptor use="signing">
+          <ds:KeyInfo>
+          <ds:X509Data>
+          <ds:X509Certificate>
+          MIIGwTCCBamgAwIBAgITOwAAK9VyNDAvUES+OAACAAAr1TANBgkqhkiG9w0BAQsFADBjMRMwEQYKCZImiZPyLGQBGRYDY29tMRowGAYKCZImiZPyLGQBGRYKc2FsZXNmb3JjZTEYMBYGCgmSJomT8ixkARkWCGludGVybmFsMRYwFAYDVQQDEw1BU0gtQ0EtV1AxLUNBMB4XDTE3MDgwNzE5NTUwMVoXDTIwMDgwNjE5NTUwMVowgb4xCzAJBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJhbmNpc2NvMRcwFQYDVQQKEw5TYWxlc2ZvcmNlLmNvbTEdMBsGA1UECxMUSVQgU2VjdXJpdHkgU2VydmljZXMxIDAeBgNVBAMTF2Fsb2hhLm15LnNhbGVzZm9yY2UuY29tMSgwJgYJKoZIhvcNAQkBFhlpdHNzLWFsb2hhQHNhbGVzZm9yY2UuY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAszYrgXAZuppe+RHuw0faltKh4VxPYiRqe45XUM3aObj9NCL+EavlKV9azyte8y0wpFEuuQO7ALpHTxrMk3rCnR+D5FuE3DFSFnbIJjUQOQ+9JSAtHiFzKLMSZVtYhsDu6LU8GRx07zFRoGOodQfz8/YMB1e3wfwtWnsWe7Wz6LXa47Ui0uNGCbQTycIF+TDIRtt9Z/CrS9/tc2Up3mDbv+deNIAdi2ZlFhi3dgrK2H+QFKs2GA3QsdI6XlrkskcNR2p17GWL7yXSYrTsrZN1mlCgHZU/zlNu+qn90roZBlQ/nfzW9bm7GfLe1Oh39rsn6S/vOwIOqMU99IdIe62gvQIDAQABo4IDEDCCAwwwHQYDVR0OBBYEFHKH9ZV0M1Un84DwNzfpKJ68iLZ2MB8GA1UdIwQYMBaAFH72wRvUQLG+0WXt6tNi06oZ2PniMIIBKQYDVR0fBIIBIDCCARwwggEYoIIBFKCCARCGQmh0dHA6Ly9jcmwuaW50ZXJuYWwuc2FsZXNmb3JjZS5jb20vYXNoLWNhLXdwMS9BU0gtQ0EtV1AxLUNBKDIpLmNybIaByWxkYXA6Ly8vQ049QVNILUNBLVdQMS1DQSgyKSxDTj1hc2gtY2Etd3AxLENOPUNEUCxDTj1QdWJsaWMlMjBLZXklMjBTZXJ2aWNlcyxDTj1TZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPWludGVybmFsLERDPXNhbGVzZm9yY2UsREM9Y29tP2NlcnRpZmljYXRlUmV2b2NhdGlvbkxpc3Q/YmFzZT9vYmplY3RDbGFzcz1jUkxEaXN0cmlidXRpb25Qb2ludDCCAQcGCCsGAQUFBwEBBIH6MIH3MIG7BggrBgEFBQcwAoaBrmxkYXA6Ly8vQ049QVNILUNBLVdQMS1DQSxDTj1BSUEsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049Q29uZmlndXJhdGlvbixEQz1pbnRlcm5hbCxEQz1zYWxlc2ZvcmNlLERDPWNvbT9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xhc3M9Y2VydGlmaWNhdGlvbkF1dGhvcml0eTA3BggrBgEFBQcwAYYraHR0cDovL29jc3Bhc2guaW50ZXJuYWwuc2FsZXNmb3JjZS5jb20vb2NzcDALBgNVHQ8EBAMCBaAwPQYJKwYBBAGCNxUHBDAwLgYmKwYBBAGCNxUIh/S7SIfX1QuE+ZMUgZ7cY4TOvi6BU/vWaob9olECAWQCAREwHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMBMCcGCSsGAQQBgjcVCgQaMBgwCgYIKwYBBQUHAwIwCgYIKwYBBQUHAwEwDQYJKoZIhvcNAQELBQADggEBADSHP1FCmjqqbObPqSp27eby/Fj3V8KWN+pIFZ5GgUi3hQMGm6kGEbEitXxFXj0rUVVm5iQhz6yrX1xDeklJh+sY9pG1eUsvjgMhz8V8EGQfaAcLyW5G4+wEp7UTXch/IWloI0CDUejDc7lAuz7kjJ4/7biJ+sjEFaFzbnyBj/j0Gywuwz0maA0dsc7usEQq/ytqZX3Nq81RE3rHX4MSxIWYEHbQgao2Fhum5t7ZjD3lMlPPhrtQvBIZfwObHk/80Iqa5EGK+XLz9mBoPK1/195pmXkiybDxV/v+Jk4S3PyWBpVWsswa0kuKBQM9FZ6AN61kYPvMaZRJcn+1JIb8P8A=
+          </ds:X509Certificate>
+          </ds:X509Data>
+          </ds:KeyInfo>
+          </md:KeyDescriptor>
+          <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://aloha.my.salesforce.com/services/auth/idp/saml2/logout"/>
+          <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://aloha.my.salesforce.com/services/auth/idp/saml2/logout"/>
+          <md:NameIDFormat>
+          urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified
+          </md:NameIDFormat>
+          <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://aloha.my.salesforce.com/idp/endpoint/HttpPost"/>
+          <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://aloha.my.salesforce.com/idp/endpoint/HttpRedirect"/>
+          </md:IDPSSODescriptor>
+          </md:EntityDescriptor>
+      logoutUrl: "https://aloha--c.visualforce.com/apex/aloha_appLauncher?sfdc.tabName=01rd000000030Y4"
+      maximumAuthenticationLifetime: 86400
+      usernameCaseConversion: "none"
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "cap-core-oc"
+      url: "https://jenkins-updates.cloudbees.com/update-center/envelope-core-oc/update-center.json"
+    - id: "default"
+      url: "https://dev-jenkins.internal.salesforce.com/cjoc/updateCenters/updates/0c8259d7faa610017979150660303e2a/update-center.json"
+    - id: "core-oc-offline"
+      url: "https://jenkins-updates.cloudbees.com/update-center/envelope-core-oc/update-center.json"
+  views:
+  - masters:
+      columns:
+      - "status"
+      - "weather"
+      - "jobName"
+      - "manageMaster"
+      - "listSelectionColumn"
+      includeRegex: ".*"
+      name: "All"
+  - buildAnalytics:
+      name: "Build Analytics"
+  - masters:
+      columns:
+      - "status"
+      - "weather"
+      - "jobName"
+      - "manageMaster"
+      - "listSelectionColumn"
+      - "totalJobsViewColumn"
+      - "queueSizeViewColumn"
+      - "jenkinsVersionViewColumn"
+      - "masterConfigurationStaleViewColumn"
+      jobFilters:
+      - jobTypeFilter:
+          includeExcludeTypeString: "includeMatched"
+          jobType: "com.cloudbees.opscenter.server.model.ClientMaster$DescriptorImpl@d067ccd"
+      - jobTypeFilter:
+          includeExcludeTypeString: "includeMatched"
+          jobType: "com.cloudbees.opscenter.server.model.ManagedMaster$DescriptorImpl@38656161"
+      name: "Masters"
+      recurse: true
+  - performanceAnalytics:
+      name: "Performance Analytics"
+  viewsTabBar: "standard"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  downloadSettings:
+    useBrowser: false
+  globalConfigurationImpl:
+    global:
+      realmOnly:
+        canCustomMapping: false
+        canOverride: false
+        defaultMappingFactory: "restrictedEquivalentRAMF"
+  remotingCLI:
+    enabled: false
+  sSHD:
+    port: -1
+unclassified:
+  contentFilters:
+    enabled: false
+  dockerImageDefinitionConfiguration:
+    images:
+    - imageTag: "460949649053.dkr.ecr.us-west-2.amazonaws.com/cicd_managed_master:0829"
+      name: "JCasC Managed Master 0829"
+  experimentalPlugins:
+    enabled: false
+  extendedEmailPublisher:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:\r\n\r\nCheck\
+      \ console output at $BUILD_URL to view the results."
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: 0
+    precedenceBulk: false
+    useSsl: false
+    watchingEnabled: false
+  kubernetesMasterProvisioning:
+    clusterEndpoints:
+    - id: "default"
+      name: "kubernetes"
+    cpus: 1.0
+    disk: 50
+    fsGroup: "1000"
+    jenkinsUrl: "http://cjoc/cjoc"
+    livenessInitialDelaySeconds: 2400
+    livenessPeriodSeconds: 2400
+    livenessTimeoutSeconds: 2400
+    memory: 3072
+    ratio: 0.7
+    storageClassName: "<MUST SPECIFY>"
+    systemProperties: |-
+      460949649053.dkr.ecr.us-west-2.amazonaws.com/cicd_build_agent:0828
+      user.timezone=America/Los_Angeles
+      -XshowSettings:vm
+      -Dhudson.remoting.ClassFilter=com.cx.restclient.dto.ScanResults
+      -XX:+AlwaysPreTouch
+      -XX:+UseG1GC
+      -XX:+UseStringDeduplication
+      -XX:+ParallelRefProcEnabled
+      -XX:+DisableExplicitGC
+      -XX:+UnlockDiagnosticVMOptions
+      -XX:+UnlockExperimentalVMOptions
+    terminationGracePeriodSeconds: 2400
+    yaml: "---\napiVersion: \"extensions/v1beta1\"\nkind: \"Ingress\"\nmetadata:\n\
+      \  annotations:\n    nginx.ingress.kubernetes.io/proxy-body-size: \"50m\"\n\
+      \    nginx.ingress.kubernetes.io/proxy-request-buffering: \"off\"\n    nginx.ingress.kubernetes.io/ssl-redirect:\
+      \ \"true\"\n    ingress.kubernetes.io/ssl-redirect: \"true\"\n    ingress.kubernetes.io/proxy-body-size:\
+      \ \"50m\"\n    ingress.kubernetes.io/proxy-request-buffering: \"off\"\n    kubernetes.io/ingress.class:\
+      \ \"nginx-cloudbees-ssdev\"\n---\napiVersion: \"apps/v1\"\nkind: \"StatefulSet\"\
+      \nspec:\n  template:\n    metadata:\n      annotations:\n        cluster-autoscaler.kubernetes.io/safe-to-evict:\
+      \ \"false\"\n    spec:\n      containers:\n      - name: \"jenkins\"\n     \
+      \   volumeMounts:\n        - mountPath: \"/var/jenkins_home/.ssh/id_rsa\"\n\
+      \          name: \"volume-ssh-keys\"\n          readOnly: true\n          subPath:\
+      \ \"id_rsa\"\n      dnsConfig:\n        searches: \n          - internal.salesforce.com\n\
+      \      volumes: \n        - name: volume-ssh-keys\n          secret: \n    \
+      \        secretName: ssh-private-key\n            defaultMode: 256"
+  location:
+    adminAddress: "address not configured yet <nobody@nowhere>"
+    url: "https://dev-jenkins.internal.salesforce.com/cjoc/"
+  mailer:
+    adminAddress: "it-cd@salesforce.com"
+    charset: "UTF-8"
+    useSsl: false
+  operationsCenterSharedConfiguration:
+    enabled: false
+  pollSCM:
+    pollingThreadCount: 10
